@@ -7,5 +7,9 @@
 #SBATCH --mem=4G
 #SBATCH --partition=pibu_el8
 
+#load lfalquet source because many tools useful
+source /data/users/lfalquet/SBC07107_24/scripts/module.sh
+
+
 module load FastQC/0.11.9-Java-11
 fastqc --threads $SLURM_CPU_PER_TASK reads.sample1.fastq.gz
