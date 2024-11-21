@@ -1,18 +1,30 @@
 #!/usr/bin/env bash
 #SBATCH --job-name=hist2_index
-#SBATCH --output=hist2_index.out
-#SBATCH --error=hist2_index.err
-#SBATCH --cpus-per-task=1
+#SBATCH -o logs/hist2_index.out
+#SBATCH -e logs/hist2_index.err
+#SBATCH --cpus-per-task=2
 #SBATCH --time=2:00:00
-#SBATCH --mem=40G
+#SBATCH --mem=40GB
 #SBATCH --partition=pibu_el8
-
-
 
 #load modules
 #source /containers/apptainer/hisat2_samtools_408dfd02f175cd88.sif
-source /data/users/lfalquet/SBC07107_24/scripts/module.sh
+#source /data/users/lfalquet/SBC07107_24/scripts/module.sh
+#module load UHTS/Aligner/hisat/2.2.1
+
+
+Data_dir=/data/users/amroczek/RNA_seq2
+work_dir=${Data_dir}/genome_mus
+unzip_genome_lland=/data/users/lland/rna_seq/ref_genome/Mus_musculus.GRCm39.dna.primary_assembly.fa
+
+
+#mkdir genome_index_mus
+
+#unzip first 
+#gunzip ${work_dir}/Mus_musculus.GRCm39.dna.primary_assembly.fa.gz
+
 
 #can't use bwa because is only for fasta and we only have gtf.gz
 # load sam file
-apptainer exec /containers/apptainer/hisat2_samtools_408dfd02f175cd88.sif hisat2-build genome_mus/Mus_musculus.GRCm39.113.gtf.gz genome_mus/mus_genome_index
+apptainer exec /containers/apptainer/hisat2_samtools_408dfd02f175cd88.sif hisat2-build ${work_dir}/Mus_musculus.GRCm39.dna.primary_assembly.fa ${work_dir}/genome_index_mus
+
