@@ -1,0 +1,302 @@
+**************************************************************************************
+mapping SRR7821921 in Lung_WT_Case$
+40592768 reads; of these:
+  40592768 (100.00%) were paired; of these:
+    3132107 (7.72%) aligned concordantly 0 times
+    35167810 (86.64%) aligned concordantly exactly 1 time
+    2292851 (5.65%) aligned concordantly >1 times
+    ----
+    3132107 pairs aligned concordantly 0 times; of these:
+      431366 (13.77%) aligned discordantly 1 time
+    ----
+    2700741 pairs aligned 0 times concordantly or discordantly; of these:
+      5401482 mates make up the pairs; of these:
+        2771119 (51.30%) aligned 0 times
+        2283607 (42.28%) aligned exactly 1 time
+        346756 (6.42%) aligned >1 times
+96.59% overall alignment rate
+**************************************************************************************
+
+**************************************************************************************
+mapping SRR7821922 in Lung_WT_Case$
+37737087 reads; of these:
+  37737087 (100.00%) were paired; of these:
+    2767026 (7.33%) aligned concordantly 0 times
+    32785986 (86.88%) aligned concordantly exactly 1 time
+    2184075 (5.79%) aligned concordantly >1 times
+    ----
+    2767026 pairs aligned concordantly 0 times; of these:
+      323038 (11.67%) aligned discordantly 1 time
+    ----
+    2443988 pairs aligned 0 times concordantly or discordantly; of these:
+      4887976 mates make up the pairs; of these:
+        2532415 (51.81%) aligned 0 times
+        2040865 (41.75%) aligned exactly 1 time
+        314696 (6.44%) aligned >1 times
+96.64% overall alignment rate
+**************************************************************************************
+
+**************************************************************************************
+mapping SRR7821918 in Lung_WT_Case$
+36220112 reads; of these:
+  36220112 (100.00%) were paired; of these:
+    2589173 (7.15%) aligned concordantly 0 times
+    31438596 (86.80%) aligned concordantly exactly 1 time
+    2192343 (6.05%) aligned concordantly >1 times
+    ----
+    2589173 pairs aligned concordantly 0 times; of these:
+      328231 (12.68%) aligned discordantly 1 time
+    ----
+    2260942 pairs aligned 0 times concordantly or discordantly; of these:
+      4521884 mates make up the pairs; of these:
+        2429872 (53.74%) aligned 0 times
+        1817048 (40.18%) aligned exactly 1 time
+        274964 (6.08%) aligned >1 times
+96.65% overall alignment rate
+**************************************************************************************
+
+**************************************************************************************
+mapping SRR7821919 in Lung_WT_Case$
+36285942 reads; of these:
+  36285942 (100.00%) were paired; of these:
+    2678878 (7.38%) aligned concordantly 0 times
+    31540803 (86.92%) aligned concordantly exactly 1 time
+    2066261 (5.69%) aligned concordantly >1 times
+    ----
+    2678878 pairs aligned concordantly 0 times; of these:
+      347054 (12.96%) aligned discordantly 1 time
+    ----
+    2331824 pairs aligned 0 times concordantly or discordantly; of these:
+      4663648 mates make up the pairs; of these:
+        2411684 (51.71%) aligned 0 times
+        1964266 (42.12%) aligned exactly 1 time
+        287698 (6.17%) aligned >1 times
+96.68% overall alignment rate
+**************************************************************************************
+
+**************************************************************************************
+mapping SRR7821920 in Lung_WT_Case$
+39982873 reads; of these:
+  39982873 (100.00%) were paired; of these:
+    5277810 (13.20%) aligned concordantly 0 times
+    32386002 (81.00%) aligned concordantly exactly 1 time
+    2319061 (5.80%) aligned concordantly >1 times
+    ----
+    5277810 pairs aligned concordantly 0 times; of these:
+      445930 (8.45%) aligned discordantly 1 time
+    ----
+    4831880 pairs aligned 0 times concordantly or discordantly; of these:
+      9663760 mates make up the pairs; of these:
+        5375363 (55.62%) aligned 0 times
+        3363296 (34.80%) aligned exactly 1 time
+        925101 (9.57%) aligned >1 times
+93.28% overall alignment rate
+**************************************************************************************
+
+**************************************************************************************
+mapping SRR7821937 in Lung_WT_Cntrl$
+44881449 reads; of these:
+  44881449 (100.00%) were paired; of these:
+    2947942 (6.57%) aligned concordantly 0 times
+    39209325 (87.36%) aligned concordantly exactly 1 time
+    2724182 (6.07%) aligned concordantly >1 times
+    ----
+    2947942 pairs aligned concordantly 0 times; of these:
+      242589 (8.23%) aligned discordantly 1 time
+    ----
+    2705353 pairs aligned 0 times concordantly or discordantly; of these:
+      5410706 mates make up the pairs; of these:
+        2874546 (53.13%) aligned 0 times
+        2175509 (40.21%) aligned exactly 1 time
+        360651 (6.67%) aligned >1 times
+96.80% overall alignment rate
+**************************************************************************************
+
+**************************************************************************************
+mapping SRR7821938 in Lung_WT_Cntrl$
+40988016 reads; of these:
+  40988016 (100.00%) were paired; of these:
+    2677476 (6.53%) aligned concordantly 0 times
+    36572472 (89.23%) aligned concordantly exactly 1 time
+    1738068 (4.24%) aligned concordantly >1 times
+    ----
+    2677476 pairs aligned concordantly 0 times; of these:
+      151387 (5.65%) aligned discordantly 1 time
+    ----
+    2526089 pairs aligned 0 times concordantly or discordantly; of these:
+      5052178 mates make up the pairs; of these:
+        2826173 (55.94%) aligned 0 times
+        1977839 (39.15%) aligned exactly 1 time
+        248166 (4.91%) aligned >1 times
+96.55% overall alignment rate
+**************************************************************************************
+
+**************************************************************************************
+mapping SRR7821939 in Lung_WT_Cntrl$
+46697727 reads; of these:
+  46697727 (100.00%) were paired; of these:
+    2454053 (5.26%) aligned concordantly 0 times
+    41092684 (88.00%) aligned concordantly exactly 1 time
+    3150990 (6.75%) aligned concordantly >1 times
+    ----
+    2454053 pairs aligned concordantly 0 times; of these:
+      183148 (7.46%) aligned discordantly 1 time
+    ----
+    2270905 pairs aligned 0 times concordantly or discordantly; of these:
+      4541810 mates make up the pairs; of these:
+        2394652 (52.72%) aligned 0 times
+        1893042 (41.68%) aligned exactly 1 time
+        254116 (5.60%) aligned >1 times
+97.44% overall alignment rate
+**************************************************************************************
+
+**************************************************************************************
+mapping SRR7821949 in Blood_WT_Case$
+29659690 reads; of these:
+  29659690 (100.00%) were paired; of these:
+    2660451 (8.97%) aligned concordantly 0 times
+    24889235 (83.92%) aligned concordantly exactly 1 time
+    2110004 (7.11%) aligned concordantly >1 times
+    ----
+    2660451 pairs aligned concordantly 0 times; of these:
+      275289 (10.35%) aligned discordantly 1 time
+    ----
+    2385162 pairs aligned 0 times concordantly or discordantly; of these:
+      4770324 mates make up the pairs; of these:
+        3037591 (63.68%) aligned 0 times
+        1415684 (29.68%) aligned exactly 1 time
+        317049 (6.65%) aligned >1 times
+94.88% overall alignment rate
+**************************************************************************************
+
+**************************************************************************************
+mapping SRR7821950 in Blood_WT_Case$
+22228490 reads; of these:
+  22228490 (100.00%) were paired; of these:
+    1946587 (8.76%) aligned concordantly 0 times
+    18696736 (84.11%) aligned concordantly exactly 1 time
+    1585167 (7.13%) aligned concordantly >1 times
+    ----
+    1946587 pairs aligned concordantly 0 times; of these:
+      176971 (9.09%) aligned discordantly 1 time
+    ----
+    1769616 pairs aligned 0 times concordantly or discordantly; of these:
+      3539232 mates make up the pairs; of these:
+        2139384 (60.45%) aligned 0 times
+        1145151 (32.36%) aligned exactly 1 time
+        254697 (7.20%) aligned >1 times
+95.19% overall alignment rate
+**************************************************************************************
+
+**************************************************************************************
+mapping SRR7821951 in Blood_WT_Case$
+32968214 reads; of these:
+  32968214 (100.00%) were paired; of these:
+    2769772 (8.40%) aligned concordantly 0 times
+    27847543 (84.47%) aligned concordantly exactly 1 time
+    2350899 (7.13%) aligned concordantly >1 times
+    ----
+    2769772 pairs aligned concordantly 0 times; of these:
+      275838 (9.96%) aligned discordantly 1 time
+    ----
+    2493934 pairs aligned 0 times concordantly or discordantly; of these:
+      4987868 mates make up the pairs; of these:
+        2987130 (59.89%) aligned 0 times
+        1635943 (32.80%) aligned exactly 1 time
+        364795 (7.31%) aligned >1 times
+95.47% overall alignment rate
+**************************************************************************************
+
+**************************************************************************************
+mapping SRR7821952 in Blood_WT_Case$
+22952527 reads; of these:
+  22952527 (100.00%) were paired; of these:
+    1805907 (7.87%) aligned concordantly 0 times
+    19488248 (84.91%) aligned concordantly exactly 1 time
+    1658372 (7.23%) aligned concordantly >1 times
+    ----
+    1805907 pairs aligned concordantly 0 times; of these:
+      269188 (14.91%) aligned discordantly 1 time
+    ----
+    1536719 pairs aligned 0 times concordantly or discordantly; of these:
+      3073438 mates make up the pairs; of these:
+        1696872 (55.21%) aligned 0 times
+        1123751 (36.56%) aligned exactly 1 time
+        252815 (8.23%) aligned >1 times
+96.30% overall alignment rate
+**************************************************************************************
+
+**************************************************************************************
+mapping SRR7821953 in Blood_WT_Case$
+21144888 reads; of these:
+  21144888 (100.00%) were paired; of these:
+    1562440 (7.39%) aligned concordantly 0 times
+    17953536 (84.91%) aligned concordantly exactly 1 time
+    1628912 (7.70%) aligned concordantly >1 times
+    ----
+    1562440 pairs aligned concordantly 0 times; of these:
+      158333 (10.13%) aligned discordantly 1 time
+    ----
+    1404107 pairs aligned 0 times concordantly or discordantly; of these:
+      2808214 mates make up the pairs; of these:
+        1695090 (60.36%) aligned 0 times
+        912918 (32.51%) aligned exactly 1 time
+        200206 (7.13%) aligned >1 times
+95.99% overall alignment rate
+**************************************************************************************
+
+**************************************************************************************
+mapping SRR7821968 in Blood_WT_Cntrl$
+30774869 reads; of these:
+  30774869 (100.00%) were paired; of these:
+    3779269 (12.28%) aligned concordantly 0 times
+    23616026 (76.74%) aligned concordantly exactly 1 time
+    3379574 (10.98%) aligned concordantly >1 times
+    ----
+    3779269 pairs aligned concordantly 0 times; of these:
+      241113 (6.38%) aligned discordantly 1 time
+    ----
+    3538156 pairs aligned 0 times concordantly or discordantly; of these:
+      7076312 mates make up the pairs; of these:
+        4636746 (65.52%) aligned 0 times
+        1882052 (26.60%) aligned exactly 1 time
+        557514 (7.88%) aligned >1 times
+92.47% overall alignment rate
+**************************************************************************************
+
+**************************************************************************************
+mapping SRR7821969 in Blood_WT_Cntrl$
+18844848 reads; of these:
+  18844848 (100.00%) were paired; of these:
+    3652790 (19.38%) aligned concordantly 0 times
+    13771468 (73.08%) aligned concordantly exactly 1 time
+    1420590 (7.54%) aligned concordantly >1 times
+    ----
+    3652790 pairs aligned concordantly 0 times; of these:
+      159332 (4.36%) aligned discordantly 1 time
+    ----
+    3493458 pairs aligned 0 times concordantly or discordantly; of these:
+      6986916 mates make up the pairs; of these:
+        4930759 (70.57%) aligned 0 times
+        1573690 (22.52%) aligned exactly 1 time
+        482467 (6.91%) aligned >1 times
+86.92% overall alignment rate
+**************************************************************************************
+
+**************************************************************************************
+mapping SRR7821970 in Blood_WT_Cntrl$
+25454472 reads; of these:
+  25454472 (100.00%) were paired; of these:
+    3759346 (14.77%) aligned concordantly 0 times
+    19295963 (75.81%) aligned concordantly exactly 1 time
+    2399163 (9.43%) aligned concordantly >1 times
+    ----
+    3759346 pairs aligned concordantly 0 times; of these:
+      229680 (6.11%) aligned discordantly 1 time
+    ----
+    3529666 pairs aligned 0 times concordantly or discordantly; of these:
+      7059332 mates make up the pairs; of these:
+        4709492 (66.71%) aligned 0 times
+        1809938 (25.64%) aligned exactly 1 time
+        539902 (7.65%) aligned >1 times
+90.75% overall alignment rate
