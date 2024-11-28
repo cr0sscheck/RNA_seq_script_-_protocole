@@ -7,12 +7,7 @@
 #SBATCH --mem=40GB
 #SBATCH --partition=pibu_el8
 
-#load modules
-#source /containers/apptainer/hisat2_samtools_408dfd02f175cd88.sif
-#source /data/users/lfalquet/SBC07107_24/scripts/module.sh
-#module load UHTS/Aligner/hisat/2.2.1
-
-
+#my directory
 Data_dir=/data/users/amroczek/RNA_seq2
 work_dir=${Data_dir}/genome_mus
 unzip_genome_lland=/data/users/lland/rna_seq/ref_genome/Mus_musculus.GRCm39.dna.primary_assembly.fa
