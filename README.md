@@ -1,4 +1,4 @@
-# **DE Toxoplasma - rna-seq course**
+# DE Toxoplasma - rna-seq course
 In this repository, you will find all the code to reproduce my analysis based on the reads from Singhania et al. (2019) (only lung and blood tissues from wildtype and toxoplasma).
 
 ## Steps 
