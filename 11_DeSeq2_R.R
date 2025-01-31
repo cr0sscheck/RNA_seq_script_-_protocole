@@ -17,8 +17,8 @@ library('DESeq2')
 library("ggplot2")
 library("EnhancedVolcano")
 library('biomaRt') #to use Ensembl
-library('matrixStats')#(?)
 library('org.Mm.eg.db')
+library('clusterProfiler')
 
 ##############################################
 #Extract data with DESeq for analyse
@@ -55,9 +55,6 @@ vsd <- vst(dds, blind = TRUE)
 ##############################################
 #vizulaze the data
 plotPCA(vsd, intgroup = c("condition","tissu")) + ggtitle("PCA") + theme(plot.title = element_text(hjust = 0.5))
-
-#first visualisation
-plotMA(dds)
 
 ##############################################
 #differential expression Blood
@@ -108,60 +105,13 @@ blood_volcano <- EnhancedVolcano(DE_blood_with_gene_names,
 #explore expression of gene from the article
 oas1a <-DE_blood["ENSMUSG00000052776",]
 oas1a$log2FoldChange > 0 #true -- > overexpression in blood
-oas1a <- plotCounts(dds, "ENSMUSG00000052776", intgroup = c("condition"), returnData = TRUE)
+oas1a <- plotCounts(dds_blood, "ENSMUSG00000052776", intgroup = c("condition"), returnData = TRUE)
 boxplot(count ~ condition , data=oas1a, main = "Expression of Oas1a", col = c('cyan', 'green4') )
 
-##############################################
-##differential expression all
-##############################################
-
-res_dds<-results(dds)
-res_df <- as.data.frame(res_dds)
-res_df$gene_id <- rownames(res_df)
-#connect ensembl mouse
-mart <- useMart("ensembl", dataset = "mmusculus_gene_ensembl")
-
-# Extraire les noms des protéines correspondants aux identifiants génétiques
-# Supposez que vos identifiants sont dans une colonne `gene_id` du data frame `df`
-protein_names <- getBM(
-  attributes = c('ensembl_gene_id', 'external_gene_name', 'protein_id'),
-  filters = 'ensembl_gene_id',
-  values = res_df$gene_id ,
-  mart = mart
-)
-res_df <- merge(res_df, protein_names, by.x = "gene_id", by.y = "ensembl_gene_id")
-
-EnhancedVolcano(res_df, lab = protein_names$external_gene_name ,x='log2FoldChange',y = 'padj')
-
-#extract normalize value 
-mat <- assay(vsd)
-rownames(mat) <- ifelse(
-  rownames(mat) %in% protein_names$ensembl_gene_id, 
-  protein_names$external_gene_name[match(rownames(mat), protein_names$ensembl_gene_id)], 
-  rownames(mat)
-)
-#annotate colonne
-annotation_col<- coldata[, c("tissu", "condition")]
-rownames(annotation_col) <- coldata$sample
-
-
-top_var_genes <- head(order(rowVars(mat), decreasing = TRUE), 50) 
-mat_subset <- mat[top_var_genes, ]
-summary(mat_subset)
-head(mat_subset)
-pheatmap(mat_subset,
-         annotation_col = annotation_col ,
-         cluster_rows = TRUE,            
-         cluster_cols = TRUE,            
-         scale = "row",                 
-         fontsize_row = 8,         
-         fontsize_col = 10
-)
 
 ##############################################
 ##differential expression Lung
 ##############################################
-
 
 # Extract Lung samples
 lung_samples <- coldata[coldata$tissu == "Lung", ]
@@ -183,7 +133,7 @@ head(DE_lung)
 mart <- useMart("ensembl", dataset = "mmusculus_gene_ensembl")
 
 #add genes name from ensembl
-ensembl <- useEnsembl(biomart = 'genes', dataset = 'mmusculus_gene_ensembl', version = 110)
+ensembl <- useEnsembl(biomart = 'genes', dataset = 'mmusculus_gene_ensembl', version = 110)#specify version
 ensembl_gene_ids_l <- rownames(DE_lung)
 
 gene_info_l <- getBM(attributes = c("ensembl_gene_id", "external_gene_name"),
@@ -192,9 +142,7 @@ gene_info_l <- getBM(attributes = c("ensembl_gene_id", "external_gene_name"),
                      mart = ensembl)
 gene_info_l <- gene_info_b[match(rownames(DE_lung), gene_info_b$ensembl_gene_id), ]
 
-
 DE_lung_with_gene_names <- cbind(gene_info_l, DE_lung)
-
 
 #volcano plot to visualize DE genes
 lung_volcano <- EnhancedVolcano(DE_lung_with_gene_names,
@@ -205,12 +153,38 @@ lung_volcano <- EnhancedVolcano(DE_lung_with_gene_names,
                                 title = "DE genes: Lung Case vs Lung Control",
                                 selectLab = 'Fcgr1'
 )
+
 #explore expression of gene from the article
 fcgr1 <-DE_lung["ENSMUSG00000015947",]
 fcgr1$log2FoldChange > 0 #True -- >overexpression in lung
-fcgr1 <- plotCounts(dds, "ENSMUSG00000015947", intgroup = c("condition"), returnData = TRUE)
+fcgr1 <- plotCounts(dds_lung, "ENSMUSG00000015947", intgroup = c("condition"), returnData = TRUE)
 boxplot(count ~ condition , data=fcgr1, main = "Expression of Fcgr1", col = c('cyan', 'green4') )
 
+##############################################
+# Answer question 6
+##############################################
+#number of gene differentially expressed in blood
+num_significant_genes_inblood <- nrow(DE_blood)
+print(num_significant_genes_inblood)
+
+upregulated_blood <- DE_blood[which(DE_blood$log2FoldChange > 0), ]
+downregulated_blood <- DE_blood[which(DE_blood$log2FoldChange < 0), ]
+
+num_upregulated_blood <- nrow(upregulated_blood)
+num_downregulated_blood <- nrow(downregulated_blood)
+
+#number of gene differentially expressed in lung
+num_significant_genes_inlung <- nrow(DE_lung)
+print(num_significant_genes_inlung)
+
+upregulated_lung <- DE_lung[which(DE_lung$log2FoldChange > 0), ]
+downregulated_lung <- DE_lung[which(DE_lung$log2FoldChange < 0), ]
+
+num_upregulated_lung <- nrow(upregulated_lung)
+num_downregulated_lung <- nrow(downregulated_lung)
+
+cat('the number of gene up and down regulate in lung', num_upregulated_lung, 'and', num_downregulated_lung,
+      'and for the blood', num_upregulated_blood,'and', num_downregulated_blood,',respectively')
 ##############################################
 # Overexpression Analysis
 ##############################################
@@ -226,6 +200,12 @@ go_blood <- enrichGO(gene = DE_blood_with_gene_names$ensembl_gene_id, universe =
 #dot plot: gene ratio
 blood_dot <- dotplot(go_blood) + ggtitle("Blood (Case vs Control): GeneRatio")+ theme(axis.text.y = element_text(size = 9))
 blood_dot
+#other plots not used in the paper
+#barplot: count by go terms, sorted by p-value
+blood_bar <- barplot(go_blood, showCategory = 10) + ggtitle("Blood (Case vs Control): P-value")
+
+#web plot: show relationship between go terms
+goplot(go_blood, showCategory = 10) + ggtitle("GO terms - Blood Case vs Blood Control")
 
 ##############################################
 # Lung Case vs Lung Control 
@@ -238,3 +218,13 @@ go_lung <- enrichGO(gene = DE_lung_with_gene_names$ensembl_gene_id, universe = n
 #dotplot: gene ratio
 lung_dot <- dotplot(go_lung ) + ggtitle("Lung (Case vs Control): GeneRatio") + theme(axis.text.y = element_text(size = 9))
 lung_dot
+
+top_terms_for_lung <- head(go_lung, n=10)  # Top 10 terms
+print(as.data.frame(top_terms_for_lung))
+
+#other plots not used in the paper
+#barplot: count by go terms, sorted by p-value
+lung_bar <- barplot(go_lung, showCategory = 10) + ggtitle("Lung (Case vs Control): P-value")
+
+#web plot: show relationship between go terms
+goplot(go_lung, showCategory = 10) + ggtitle("GO terms - Lung Case vs Lung Control")
